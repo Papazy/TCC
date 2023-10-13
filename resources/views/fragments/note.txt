@@ -1,0 +1,1 @@
+Fragments berisi sekumpulan komponen, seperti sidebar dan footer

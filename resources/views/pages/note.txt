@@ -1,0 +1,1 @@
+Berisi page page yang akan ditampilkan seperti halaman profile, halaman soal, landing page dan lain lain.
