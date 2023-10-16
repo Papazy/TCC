@@ -18,7 +18,7 @@ return (
                     <img src={profile_pemandu} alt="" className="rounded-full w-[160px] h-[160px] border-2 border-black"/>
                     <div className="mt-5 ml-7">
                         <p className="font-semibold">Nama <span className="font-normal ml-7">Sepuh</span></p>
-                        <p className="font-semibold">Rating <span className="font-normal ml-5">1000</span></p>
+                        <p className="font-semibold">Rating <span className="font-normal ml-5">1500</span></p>
                     </div>
                 </div>
             </div>
