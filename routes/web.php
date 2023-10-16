@@ -25,6 +25,8 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('user', [ProfileController::class, 'profile'])->name('profile');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

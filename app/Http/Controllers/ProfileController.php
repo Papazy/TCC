@@ -13,6 +13,10 @@ use Inertia\Response;
 
 class ProfileController extends Controller
 {
+
+    public function profile(){
+        return Inertia::render('Profile/Profile');
+    }
     /**
      * Display the user's profile form.
      */
