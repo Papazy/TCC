@@ -32,7 +32,7 @@ export default function Register() {
         <GuestLayout>
             <Head title="Register" />
 
-            <form onSubmit={submit} className='border border-red-500'>
+            <form onSubmit={submit} className='w-3/4'>
 
                 <div>
                     <p className='text-4xl font-bold w-full my-4'>
