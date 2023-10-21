@@ -3,7 +3,9 @@ import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
+import PrimaryButtonCustom from '@/Components/PrimaryButtonCustom';
 import TextInput from '@/Components/TextInput';
+import TextInputCustom from '@/Components/TextInputCustom';
 import { Head, Link, useForm } from '@inertiajs/react';
 
 export default function Register() {
@@ -30,11 +32,18 @@ export default function Register() {
         <GuestLayout>
             <Head title="Register" />
 
-            <form onSubmit={submit}>
+            <form onSubmit={submit} className='w-3/4'>
+
+                <div>
+                    <p className='text-4xl font-bold w-full my-4'>
+                        Register
+                    </p>
+                </div>
+
                 <div>
                     <InputLabel htmlFor="name" value="Name" />
 
-                    <TextInput
+                    <TextInputCustom
                         id="name"
                         name="name"
                         value={data.name}
@@ -51,7 +60,7 @@ export default function Register() {
                 <div className="mt-4">
                     <InputLabel htmlFor="email" value="Email" />
 
-                    <TextInput
+                    <TextInputCustom
                         id="email"
                         type="email"
                         name="email"
@@ -68,7 +77,7 @@ export default function Register() {
                 <div className="mt-4">
                     <InputLabel htmlFor="password" value="Password" />
 
-                    <TextInput
+                    <TextInputCustom
                         id="password"
                         type="password"
                         name="password"
@@ -85,7 +94,7 @@ export default function Register() {
                 <div className="mt-4">
                     <InputLabel htmlFor="password_confirmation" value="Confirm Password" />
 
-                    <TextInput
+                    <TextInputCustom
                         id="password_confirmation"
                         type="password"
                         name="password_confirmation"
@@ -102,14 +111,16 @@ export default function Register() {
                 <div className="flex items-center justify-end mt-4">
                     <Link
                         href={route('login')}
-                        className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-none focus:ring-offset-2 focus:ring-indigo-500"
                     >
                         Already registered?
                     </Link>
+                </div>
 
-                    <PrimaryButton className="ml-4" disabled={processing}>
+                <div className="block mt-4">
+                    <PrimaryButtonCustom className="" disabled={processing}>
                         Register
-                    </PrimaryButton>
+                    </PrimaryButtonCustom>
                 </div>
             </form>
         </GuestLayout>
