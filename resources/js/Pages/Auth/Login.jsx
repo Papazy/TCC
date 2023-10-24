@@ -69,7 +69,7 @@ export default function Login({ status, canResetPassword }) {
                         name="password"
                         value={data.password}
                         className="mt-1 block w-full"
-                        autoComplete="current-password"
+                        // autoComplete="current-password"
                         onChange={(e) => setData('password', e.target.value)}
                     />
 
