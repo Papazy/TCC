@@ -1,3 +1,5 @@
+// Di dashboard ini kenapa g jalan togglenya karena G pake "SidebarProvider"
+
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 

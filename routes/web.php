@@ -30,9 +30,15 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Home
 Route::get('/home', function () {
     return Inertia::render('Home');
 })->name('home');
+
+// Problem
+Route::get('/problem', function () {
+    return Inertia::render('Problem');
+})->name('problem');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
