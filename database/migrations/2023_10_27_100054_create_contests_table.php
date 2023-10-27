@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('problems', function (Blueprint $table) {
+        Schema::create('contests', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('admin_id')->constrained();
             $table->string('title');
-            $table->text('deskripsi');
-            $table->text('batasan');
-            $table->text('format_input');
-            $table->text('format_output');
-            $table->text('editorial');
+            $table->text('description');
+            $table->timestamp('start_time');
+            $table->timestamp('end_time');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('problems');
+        Schema::dropIfExists('contests');
     }
 };
