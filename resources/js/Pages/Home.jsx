@@ -1,14 +1,22 @@
-import Sidebar from "@/Components/Sidebar/Sidebar";
-import Content from "@/Components/ContentMain";
-import { SidebarProvider } from "@/Components/Sidebar/SidebarContext";
-// import './index.css'
-function App() {
+import ContentLayout from '@/Layouts/ContentLayout';
+import Hero from '@/Components/Home/Hero';
+import Step from '@/Components/Home/Step';                      
+import Rank from '@/Components/Home/Rank';
+import Cta from '@/Components/Home/Cta';
+import Footer from '@/Components/Home/Footer';
+import { Head } from '@inertiajs/react';
+
+export default function Home({ auth }) {
     return (
-        <div >
-            {/* <Sidebar></Sidebar> */}
-            <Content></Content>
-        </div>
+        <ContentLayout
+            user={auth.user}
+        >
+            <Head title="TCC" />
+            <Hero/>
+            <Step/>
+            <Rank></Rank>
+            <Cta></Cta>
+            <Footer/> 
+        </ContentLayout>
     );
 }
-
-export default App;
