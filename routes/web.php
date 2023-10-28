@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RankingsController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -26,6 +27,8 @@ Route::get('/', function () {
 });
 
 Route::get('user', [ProfileController::class, 'profile'])->name('profile');
+
+Route::get('ranking', [RankingsController::class, 'rankings'])->name('rankings');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

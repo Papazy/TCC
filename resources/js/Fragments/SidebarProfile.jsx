@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@inertiajs/react";
 
-const SidebarProfile = () => {
+const SidebarProfile = () => {  
   return (
     <div className="m-8 border-r-2 border-black h-full w-4/5 pr-16">
         <h1 className="text-[32px] font-bold">Menu</h1>
