@@ -17,7 +17,7 @@ use App\Http\Controllers\ProblemsController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -26,14 +26,16 @@ Route::get('/', function () {
     ]);
 });
 
+// Home
+Route::get('/', function () {
+    return Inertia::render('Home');
+})->name('home');
+
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// Home
-Route::get('/home', function () {
-    return Inertia::render('Home');
-})->name('home');
 
 // Problem
 Route::get('/problem', function () {
