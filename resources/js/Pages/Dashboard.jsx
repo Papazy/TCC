@@ -1,9 +1,10 @@
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+// Di dashboard ini kenapa g jalan togglenya karena G pake "SidebarProvider"
+import ContentLayout from '@/Layouts/ContentLayout';
 import { Head } from '@inertiajs/react';
 
 export default function Dashboard({ auth }) {
     return (
-        <AuthenticatedLayout
+        <ContentLayout
             user={auth.user}
             header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>}
         >
@@ -16,6 +17,6 @@ export default function Dashboard({ auth }) {
                     </div>
                 </div>
             </div>
-        </AuthenticatedLayout>
+        </ContentLayout>
     );
 }

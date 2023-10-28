@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, {useState} from "react";
 
 const RankingsLayout = () => {
     const [data, setData] = useState(

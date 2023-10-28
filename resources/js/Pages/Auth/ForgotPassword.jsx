@@ -1,7 +1,9 @@
 import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
 import PrimaryButton from '@/Components/PrimaryButton';
+import PrimaryButtonCustom from '@/Components/PrimaryButtonCustom';
 import TextInput from '@/Components/TextInput';
+import TextInputCustom from '@/Components/TextInputCustom';
 import { Head, useForm } from '@inertiajs/react';
 
 export default function ForgotPassword({ status }) {
@@ -17,6 +19,7 @@ export default function ForgotPassword({ status }) {
 
     return (
         <GuestLayout>
+            <div className=''>
             <Head title="Forgot Password" />
 
             <div className="mb-4 text-sm text-gray-600">
@@ -27,7 +30,7 @@ export default function ForgotPassword({ status }) {
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
             <form onSubmit={submit}>
-                <TextInput
+                <TextInputCustom
                     id="email"
                     type="email"
                     name="email"
@@ -40,11 +43,12 @@ export default function ForgotPassword({ status }) {
                 <InputError message={errors.email} className="mt-2" />
 
                 <div className="flex items-center justify-end mt-4">
-                    <PrimaryButton className="ml-4" disabled={processing}>
+                    <PrimaryButtonCustom  disabled={processing}>
                         Email Password Reset Link
-                    </PrimaryButton>
+                    </PrimaryButtonCustom>
                 </div>
             </form>
+            </div>
         </GuestLayout>
     );
 }

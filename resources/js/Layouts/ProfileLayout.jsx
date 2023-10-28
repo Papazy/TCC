@@ -4,7 +4,7 @@ import profile_pemandu from '../../../public/images/profile_pemandu.jpg'
 const ProfileLayout = () => {
     const [data, setData] = useState(
         [
-            { name: "Sepuh", rating: 2000000, scores: 1200, attempted: 12, ac: 8, wa: 4},
+            { name: "Sepuh", rating: 12000, scores: 1200, attempted: 12, ac: 8, wa: 4},
         ]
     );
   return (
@@ -23,10 +23,10 @@ const ProfileLayout = () => {
                 />
                 <div className="mt-5 ml-7">
                 <p className="font-semibold">
-                    Nama <span className="font-normal ml-7">{profile.name}</span>
+                    Name <span className="font-normal ml-7">{profile.name}</span>
                 </p>
                 <p className="font-semibold">
-                    Rating <span className="font-normal ml-5">{profile.rating}</span>
+                    Rating <span className="font-normal ml-3">{profile.rating}</span>
                 </p>
                 </div>
             </div>
@@ -40,7 +40,7 @@ const ProfileLayout = () => {
                     ● Scores : <span className="font-bold">{profile.scores}</span> pts
                     </li>
                     <li>
-                    ● Attempted : <span className="font-bold">{profile.Attempted}</span>
+                    ● Attempted : <span className="font-bold">{profile.attempted}</span>
                     </li>
                 </ul>
                 <ul className="ml-6">
