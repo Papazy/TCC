@@ -47,7 +47,7 @@ Route::get('/problem', function () {
     return Inertia::render('Problem');
 })->name('problem');
 
-Route::get('/problemDetail', function () {
+Route::get('/problemdetail', function () {
     return Inertia::render('ProblemDetail');
 })->name('ProblemDetail');
 
