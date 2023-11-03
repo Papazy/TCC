@@ -14,8 +14,16 @@ return new class extends Migration
         Schema::create('contest_problems', function (Blueprint $table) {
             $table->id();
             $table->foreignId('contest_id')->constrained();
-            $table->foreignId('problem_id')->constrained();
-            $table->timestamps();
+            $table->foreignId('category_id')->constrained();
+            $table->string('title');
+            $table->text('description');
+            $table->integer('point');
+            $table->text('input_format');
+            $table->text('output_format');
+            $table->text('constraints');
+            $table->text('examples');
+            $table->text('difficulty');
+            $table->text('editorial');
         });
     }
 
