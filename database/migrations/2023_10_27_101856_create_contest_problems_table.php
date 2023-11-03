@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('contest_id')->constrained();
             $table->foreignId('category_id')->constrained();
             $table->string('title');
+            $table->string('slug');
             $table->text('description');
             $table->integer('point');
             $table->text('input_format');

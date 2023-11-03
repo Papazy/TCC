@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -42,4 +44,28 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * Get the admin associated with the user.
+     */
+    public function admin(): HasOne
+    {
+        return $this->hasOne(User::class);
+    }
+    
+    /**
+     * Get the submissions of the User.
+     */
+    public function submissions(): HasMany
+    {
+        return $this->hasMany(Submission::class);
+    }
+   
+    /**
+     * Get the contest_participants of the user.
+     */
+    public function contest_participants(): HasMany
+    {
+        return $this->hasMany(ContestParticipant::class);
+    }
 }

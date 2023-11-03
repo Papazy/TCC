@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('admin_id')->constrained();
             $table->string('title');
+            $table->string('slug');
             $table->text('description');
             $table->timestamp('start_time');
             $table->timestamp('end_time');
