@@ -30,6 +30,7 @@ Route::get('/welcome', function () {
 Route::get('/user', [ProfileController::class, 'profile'])->name('profile');
 
 Route::get('/ranking', [RankingsController::class, 'rankings'])->name('rankings');
+
 // Home
 Route::get('/', function () {
     return Inertia::render('Home');
@@ -45,6 +46,10 @@ Route::get('/dashboard', function () {
 Route::get('/problem', function () {
     return Inertia::render('Problem');
 })->name('problem');
+
+Route::get('/problemDetail', function () {
+    return Inertia::render('ProblemDetail');
+})->name('ProblemDetail');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
