@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RankingsController;
+use App\Http\Controllers\SubmissionsController;
 use App\Http\Controllers\ProblemsController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -27,9 +28,18 @@ Route::get('/welcome', function () {
     ]);
 });
 
+// profile
 Route::get('/user', [ProfileController::class, 'profile'])->name('profile');
+Route::get('/user/submission', [ProfileController::class, 'submissionsHistory'])->name('submission-history');
 
-Route::get('/ranking', [RankingsController::class, 'rankings'])->name('rankings');
+// ranking
+Route::get('/ranking', [RankingsController::class, 'rankings'])->name('ranking');
+Route::get('/ranking/scores', [RankingsController::class, 'scorers'])->name('scores');
+
+// submissions
+Route::get('/submissions', [SubmissionsController::class, 'submissions'])->name('submissions');
+Route::get('/submissions/mine', [SubmissionsController::class, 'mySubmissions'])->name('mysubmissions');
+
 // Home
 Route::get('/', function () {
     return Inertia::render('Home');

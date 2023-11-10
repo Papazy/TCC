@@ -8,7 +8,7 @@ const ProfileLayout = () => {
         ]
     );
   return (
-    <>
+    <div className="ml-2">
         <h1 className="text-[64px] font-bold font-lato">Settings</h1>
         {data.map((profile, index) => (
             <div key={index} className="border border-black mt-8">
@@ -51,7 +51,7 @@ const ProfileLayout = () => {
             </div>
             </div>
         ))}
-        </>
+    </div>
     );
     };
 

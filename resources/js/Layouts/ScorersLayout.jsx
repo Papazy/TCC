@@ -1,18 +1,18 @@
 import React, {useState} from "react";
 
-const RankingsLayout = () => {
+const ScorersLayout = () => {
     const [data, setData] = useState(
         [
-            { id: 1, name: "Sepuh", rating: 3980 },
-            { id: 2, name: "Michel", rating: 3240 },
-            { id: 3, name: "Andi", rating: 2900 },
-            { id: 4, name: "Ridwan", rating: 2892 },
-            { id: 5, name: "Putri", rating: 2800 },
-            { id: 6, name: "Sepuh", rating: 2792 },
-            { id: 7, name: "Michel", rating: 2500 },
-            { id: 8, name: "Andi", rating: 2300 },
-            { id: 9, name: "Ridwan", rating: 2100 },
-            { id: 10, name: "Putri", rating: 2000 },
+            { id: 1, name: "Sepuh", score: 2000000 },
+            { id: 2, name: "Michel", score: 1500000 },
+            { id: 3, name: "Andi", score: 1000000 },
+            { id: 4, name: "Ridwan", score: 1000000 },
+            { id: 5, name: "Putri", score: 1000000 },
+            { id: 6, name: "Sepuh", score: 1000000 },
+            { id: 7, name: "Michel", score: 1000000 },
+            { id: 8, name: "Andi", score: 1000000 },
+            { id: 9, name: "Ridwan", score: 1000000 },
+            { id: 10, name: "Putri", score: 1000000 },
         ]
     );
 
@@ -25,7 +25,7 @@ const RankingsLayout = () => {
                     <tr>
                         <th>#</th>
                         <th className="text-left pl-3">Name</th>
-                        <th>Rating</th>
+                        <th>Score</th>
                     </tr>
                 </thead>
                 <tbody className="text-center">
@@ -38,7 +38,7 @@ const RankingsLayout = () => {
                                 {item.name}
                             </td>
                             <td className={`border-y-2 border-e-2 border-black`}>
-                                {item.rating}
+                                {item.score}
                             </td>
                         </tr>
                     ))}
@@ -49,4 +49,4 @@ const RankingsLayout = () => {
   )
 };
 
-export default RankingsLayout;
+export default ScorersLayout;

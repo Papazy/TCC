@@ -1,22 +1,22 @@
 import React from "react";
-import SidebarProfile from "@/Fragments/SidebarProfile";
-import ProfileLayout from "@/Layouts/ProfileLayout";
+import SidebarRankings from "@/Fragments/SidebarRankings";
 import Navbar from "@/Components/Navbar";
+import ScorersLayout from "@/Layouts/ScorersLayout";
 
-const Profile = () => {
-return (
+const Scorers = () => {
+  return (
     <div className="overflow-hidden font-mono md:min-w-fit xl:min-w-full">
         <Navbar/>
         <div className="flex">
             <div>
-                <SidebarProfile/>
+                <SidebarRankings/>
             </div>
             <div className="w-3/4 mt-8">
-                <ProfileLayout/>
+                <ScorersLayout/>
             </div>
         </div>
     </div>
-);
+  );
 };
 
-export default Profile;
+export default Scorers;

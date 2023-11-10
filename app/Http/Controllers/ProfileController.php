@@ -17,6 +17,11 @@ class ProfileController extends Controller
     public function profile(){
         return Inertia::render('Profile/Profile');
     }
+
+    public function submissionsHistory(){
+        return Inertia::render('Profile/SubmissionsHistory');
+    }
+
     /**
      * Display the user's profile form.
      */

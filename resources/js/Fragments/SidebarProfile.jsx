@@ -1,16 +1,24 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "@inertiajs/react";
 
 const SidebarProfile = () => {  
+  const [isActiveSummary, setIsActiveSummary] = useState();
+  const [isActiveSubmission, setIsActiveSubmission] = useState();
+
+  useEffect(() => {
+    setIsActiveSummary(window.location.pathname === '/user');
+    setIsActiveSubmission(window.location.pathname === '/user/submission');
+  }, []);
+  
 
   return (
-    <div className="m-8 border-r-2 border-black h-full w-4/5 pr-16">
+    <div className="m-8 border-r-2 border-black h-full w-5/6 text-[24px] pr-16">
         <h1 className="text-[32px] font-bold">Menu</h1>
-        <Link href="" className="hover:text-[#FFC900]">
-            <p className="text-[24px] ml-2 mt-2">Summary</p>
+        <Link href="/user" className={`${isActiveSummary ? 'text-[#9BC12E]' : 'text-black'} hover:opacity-60`}>
+            <p className="ml-2 mt-2">Summary</p>
         </Link>
-        <Link href="" className="hover:text-[#FFC900]">
-            <p className="text-[24px] ml-2 mt-2">Other options</p>
+        <Link href="/user/submission" className={`${isActiveSubmission ? 'text-[#9BC12E]' : 'text-black'} hover:opacity-60`}>
+            <p className="ml-2 mt-2">Submission</p>
         </Link>
     </div>
   );
