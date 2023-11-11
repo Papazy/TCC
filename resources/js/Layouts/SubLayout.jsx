@@ -8,14 +8,14 @@ export default function SubLayout({ user, header ,children } ) {
 
     return (
 
-        <div className="min-h-screen pt-6 sm:pt-0 bg--100">
+        <div className="min-h-screen">
             <Navbar
               user={user}
             ></Navbar>
-            <div className="min-h-screen flex justify-center my-10 pt-6 sm:pt-0 bg--100">
+            <div className="min-h-screen flex justify-center bg-slate-100">
                 <SidebarProblemDetail></SidebarProblemDetail>
                 <span className='border-l border-gray-500'></span>
-                <div className="w-2/3 px-10 bg-white overflow-hidden">
+                <div className="w-2/3 p-10 pb-20 overflow-hidden">
                     {children}
                 </div>
             </div>

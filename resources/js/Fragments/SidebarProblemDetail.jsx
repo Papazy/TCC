@@ -6,7 +6,7 @@ import { Link } from "@inertiajs/react";
 export default function SidebarProblemDetail() {  
 
   return (
-    <div className="w-1/5 h-max pr-16">
+    <div className="w-1/5 h-max pr-16 py-10">
         <h1 className="text-[32px] font-bold">Problem</h1>
 
           {problemLinks.map((problemLink) => (
