@@ -12,7 +12,7 @@ export default function SubLayout({ user, header ,children } ) {
             <Navbar
               user={user}
             ></Navbar>
-            <div className="min-h-screen flex justify-center m-10 pt-6 sm:pt-0 bg--100">
+            <div className="min-h-screen flex justify-center my-10 pt-6 sm:pt-0 bg--100">
                 <SidebarProblemDetail></SidebarProblemDetail>
                 <span className='border-l border-gray-500'></span>
                 <div className="w-2/3 px-10 bg-white overflow-hidden">

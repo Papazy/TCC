@@ -48,12 +48,12 @@ Route::get('/problem', function () {
 })->name('problem');
 
 Route::get('/problemdetail', function () {
-    return Inertia::render('ProblemDetail');
+    return Inertia::render('Detail/ProblemDetail');
 })->name('ProblemDetail');
 
-Route::get('/submissiondetail', function () {
-    return Inertia::render('SubmissionDetail');
-})->name('SubmissinoDetail');
+Route::get('/problemsubmission', function () {
+    return Inertia::render('Detail/ProblemSubmission');
+})->name('ProblemSubmission');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

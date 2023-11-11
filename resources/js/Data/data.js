@@ -17,5 +17,5 @@ export const navigationLinks = [
 
 export const problemLinks = [
     { id: 1, title: 'Statement', link: '/problemdetail' },
-    { id: 2, title: 'Submission', link: '/submissiondetail' },
+    { id: 2, title: 'Submission', link: '/problemsubmission' },
 ];

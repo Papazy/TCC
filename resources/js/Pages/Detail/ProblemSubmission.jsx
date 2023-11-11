@@ -1,10 +1,10 @@
 import SubLayout from '@/Layouts/SubLayout';
 import React, { useState } from "react";
 import { problemLinks } from '@/Data/data.js';
-import { Link, Head } from "@inertiajs/react";
+import { Head } from "@inertiajs/react";
 
 
-export default function SubmissionDetail({ auth }) {
+export default function ProblemSubmission({ auth }) {
 
     const [currentTab, setCurrentTab] = useState(1);
 
@@ -26,12 +26,12 @@ export default function SubmissionDetail({ auth }) {
     ];
 
     const desc = [
-        { id: 1, name: 'Asep', lang: 'C++', time: 'Oct 9, 2023 at 22:23:13', status: 'Complete' },
+        { id: 1, name: 'Asep', lang: 'C++', time: 'Oct 9, 2023 at 22:23:13', status: 'ACC' },
     ];
 
     const result = [
-        { id: 1, status: 'Act', time: '2ms', memory: '100 KB', score: '50.0' },
-        { id: 2, status: 'Act', time: '2ms', memory: '100 KB', score: '50.0' },
+        { id: 1, status: 'Acc', time: '2ms', memory: '100 KB', score: '50.0' },
+        { id: 2, status: 'Acc', time: '2ms', memory: '100 KB', score: '50.0' },
     ];
 
   return (
@@ -42,31 +42,37 @@ export default function SubmissionDetail({ auth }) {
             <Head title="Submission" />
             <div className='flex justify-center'>
                 <div className='flex justify-center'>
-                    <button className='border-2 border-black py-1 px-2 rounded-l-full hover:bg-[#FFC900]' onClick={() => toogleTab(1)}>My Submision</button>
+                    <button className={`${currentTab === 1 
+                        ? "border-2 border-black py-1 px-2 rounded-l-full bg-[#FFC900]" 
+                        : "border-2 border-black py-1 px-2 rounded-l-full hover:bg-[#FFC900]" }`} 
+                        onClick={() => toogleTab(1)}>My Submision</button>
                     {/* <span className='border-l-2 border-black'></span> */}
-                    <button className='border-2 border-black border-l-0 py-1 px-2 rounded-r-full hover:bg-[#FFC900]' onClick={() => toogleTab(2)}>All Submissions</button>
+                    <button className={`${currentTab === 2 
+                        ? "border-2 border-black border-l-0 py-1 px-2 rounded-r-full bg-[#FFC900]"
+                        : "border-2 border-black border-l-0 py-1 px-2 rounded-r-full hover:bg-[#FFC900]" }`} 
+                        onClick={() => toogleTab(2)}>All Submissions</button>
                 </div>
             </div>
+
+            {/* My Subs Page */}
             <div className={`${currentTab === 1 ? "" : "hidden"}`}>
-                <div>
                     <div>
                         <p className='text-4xl font-bold w-full my-4'>Problem name</p>
                     </div>
 
-                    <div>
-                        <h1 className='font-bold'>Problem Name</h1>
+                    <div className=''>
                         {desc.map((item) => (
-                            <p className='text-m w-full my-4'>
+                            <p className='text-sm text-slate-800 w-full my-4'>
                                 Name : {item.name} <br /> 
                                 Language: {item.lang} <br /> 
                                 Time : {item.time} <br />
                                 Status : {item.status}
-                                </p>
+                            </p>
                         ))}
                     </div>
 
-                    <div>
-                        <h1 className='font-bold'>Test Result</h1>
+                    <div className='py-4'>
+                        <h1 className='text-xl font-bold'>Test Result</h1>
                         <div class="table-wrapper">
                             <table class="w-full border-separate border-spacing-y-3">
                                 <thead>
@@ -104,24 +110,25 @@ export default function SubmissionDetail({ auth }) {
                     </div>
 
                     <div>
-                        <h1 className='font-bold'>Solution</h1>
+                        <h1 className='text-xl font-bold'>Solution</h1>
                         <object className='mt-4 border-2 border-black w-full' data="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210101201653/PDF.pdf"
                         height="720"
                         >
                         </object>
                     </div>
-                </div>
             </div>
+            
+            {/* All Subs Page */}
             <div className={`${currentTab === 2 ? "" : "hidden"}`}>
 
                 <div>
                     <p className='text-4xl font-bold w-full my-4'>Problem name</p>
                 </div>
-
-                {/* <RankingsLayout></RankingsLayout> */}
- 
+            
+                <div className='py-2'>
                 
-                <div className='pt-5'>
+                    <h1 className='text-xl font-bold'>All Submissions</h1>
+
                     <div class="table-wrapper">
                         <table class="w-full border-separate border-spacing-y-3">
                             <thead>
