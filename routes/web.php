@@ -51,6 +51,10 @@ Route::get('/problemdetail', function () {
     return Inertia::render('ProblemDetail');
 })->name('ProblemDetail');
 
+Route::get('/submissiondetail', function () {
+    return Inertia::render('SubmissionDetail');
+})->name('SubmissinoDetail');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
