@@ -22,8 +22,12 @@ class Contest extends Model
     /**
      * Get the contest_participants of the contest.
      */
-    public function contest_participants(): HasMany
+    public function participants(): HasMany
     {
         return $this->hasMany(ContestParticipant::class);
+    }
+    public function notifications(): HasMany
+    {
+        return $this->hasMany(ContestNotification::class);
     }
 }

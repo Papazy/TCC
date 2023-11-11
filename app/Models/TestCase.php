@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class TestCase extends Model
 {
     use HasFactory;
+    public function problem(): belongsTo
+    {
+        return $this->belongsTo(Problem::class);
+    }
 }

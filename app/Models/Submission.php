@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Submission extends Model
 {
     use HasFactory;
+    public function problem()
+    {
+        return $this->belongsTo(Problem::class);
+    }
+    public function participant()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('description');
-            $table->timestamp('start_time');
-            $table->timestamp('end_time');
+            $table->timestamp('start_time')->nullable();;
+            $table->timestamp('end_time')->nullable();;
             $table->timestamps();
         });
     }

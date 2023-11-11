@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ContestNotification extends Model
 {
     use HasFactory;
+    public function contest(){
+        return $this->belongsTo(Contest::class);
+    }
 }

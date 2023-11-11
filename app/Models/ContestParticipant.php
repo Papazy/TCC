@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class ContestParticipant extends Model
 {
     use HasFactory;
+
+    public function contest(){
+        return $this->belongsTo(ContestParticipant::class);
+    }
+    public function submissions()
+    {
+        return $this->hasMany(Submission::class);
+    }
 }

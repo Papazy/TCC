@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ContestTestCase extends Model
 {
     use HasFactory;
+
+    public function problem(): belongsTo
+    {
+        return $this->belongsTo(ContestProblem::class);
+    }
 }
