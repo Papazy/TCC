@@ -41,34 +41,51 @@ const ProblemDetail = ({ auth }) => {
                 
                 <div className=''>
                     <div class="table-wrapper">
-                        <table class="w-full border-separate border-spacing-y-3 table-auto">
+                        <table class="w-full border-separate border-spacing-y-3">
                             <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th className="text-left pl-3">Name</th>
+                                <tr className="text-left">
+                                    <th className="pl-3">Id</th>
+                                    <th>User</th>
+                                    <th>Archive</th>
+                                    <th>Problems</th>
+                                    <th>Lang</th>
+                                    <th>Verdict</th>
+                                    <th>Pts</th>
                                     <th>Time</th>
                                 </tr>
                             </thead>
-                            <tbody className="text-center">
+                            <tbody>
                                 {data.map((item, index) => (
-                                    <tr key={index}>
-                                        <td className={`bg-black text-white border-y-2 border-s-2 border-black h-10 w-10`}>
+                                    <tr key={index} className={index%2 === 0? 'bg-white' : 'bg-[#EDEDED]'}>
+                                        <td className={`border-y-2 border-s-2 border-black h-10 pl-3`}>
                                             {item.id}
                                         </td>
-                                        <td className={`border-y-2 border-black text-left pl-3 w-2/3`}>
-                                            {item.name}
+                                        <td className={`border-y-2 border-black`}>
+                                            {item.user}
+                                        </td>
+                                        <td className={`border-y-2 border-black`}>
+                                            {item.archive}
+                                        </td>
+                                        <td className={`border-y-2 border-black`}>
+                                            {item.problems}
+                                        </td>
+                                        <td className={`border-y-2 border-black`}>
+                                            {item.lang}
+                                        </td>
+                                        <td className={`border-y-2 border-black`}>
+                                            {item.verdict}
+                                        </td>
+                                        <td className={`border-y-2 border-black`}>
+                                            {item.pts}
                                         </td>
                                         <td className={`border-y-2 border-e-2 border-black`}>
                                             {item.time}
                                         </td>
-                                    </tr>
+                                        </tr>
                                 ))}
                             </tbody>
-                        </table>
+                        </table>    
                     </div>
-                </div>
-                <div>
-
                 </div>
             </div>
         </SubLayout>
