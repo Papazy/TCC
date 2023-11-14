@@ -25,6 +25,7 @@ return new class extends Migration
             $table->text('examples');
             $table->text('difficulty');
             $table->text('editorial');
+            $table->timestamps();
         });
     }
 

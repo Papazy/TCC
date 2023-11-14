@@ -33,7 +33,7 @@ php artisan migrate
 ```
 - Jika ingin melalukan seed data untuk mengisi data dump ke dalam database jalankan 
 ```bash
-php artisa db:seed
+php artisan db:seed
 ```
 - Jalankan perintah 
 ```bash

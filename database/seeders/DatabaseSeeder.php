@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Language;
+use App\Models\Problem;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,7 +15,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(50)->create();
+        \App\Models\Admin::factory(5)->create();
+        \App\Models\Category::factory(10)->create();
+        
+        $this->call(ProblemSeeder::class);
+        $this->call(LanguageSeeder::class);
+
+        \App\Models\Submission::factory(60)->create();
+        \App\Models\Contest::factory(5)->create();
+
+        $this->call(ContestProblemSeeder::class);
+
+        \App\Models\ContestParticipant::factory(50)->create();
+        \App\Models\ContestSubmission::factory(100)->create();
+        \App\Models\ContestNotification::factory(20)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
