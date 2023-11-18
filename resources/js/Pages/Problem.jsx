@@ -1,13 +1,14 @@
 import Navbar from "@/Components/Navbar";
-import ProblemTop from "@/Components/Problem/ProblemTop";
-import ProblemCard from "@/Components/Problem/ProblemCard";
+import ProblemPage from "@/Components/Problem/ProblemPage";
+// import { BrowserRouter } from "react-router-dom";
 
-export default function Problem() {
+export default function Problem({ problemCard }) {
     return (
-        <div className="overflow-hidden font-mono md:min-w-fit xl:min-w-full">
+        <>
             <Navbar></Navbar>
-            <ProblemTop></ProblemTop>
-            <ProblemCard></ProblemCard>
-        </div>
+            <div className="overflow-hidden font-mono md:min-w-fit py-2 md:px-8 px-6 xl:min-w-full">
+                <ProblemPage problemCard={problemCard} />
+            </div>
+        </>
     );
 }

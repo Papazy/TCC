@@ -1,9 +1,17 @@
+import { Link } from "@inertiajs/react";
+import React, { useState } from "react";
+
 export default function ProblemTop() {
+    const [activeTab, setActiveTab] = useState("popular");
+
+    const handleSelectChange = (tab) => {
+        setActiveTab(tab);
+    };
     return (
         <section className="bg-white">
             <div className="container px-6 py-10 mx-auto">
                 <h1 className="text-3xl font-semibold text-black capitalize lg:text-4xl ">
-                    {/* explore our <br /> awesome{" "} */}
+                    
                     <span className="underline decoration-blue-500">
                         Problems
                     </span>
@@ -13,48 +21,105 @@ export default function ProblemTop() {
                     problem categories. By selecting the right category, you can
                     dive into engaging challenges and refine your skills
                 </p>
-
-                <form className="mt-4 w-1/3 xl:mt-6">
-                    <label
-                        htmlFor="default-search"
-                        className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-                    >
-                        Search
-                    </label>
-                    <div className="relative">
-                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                            <svg
-                                className="w-4 h-4 text-gray-500 dark:text-gray-400"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 20 20"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                                />
-                            </svg>
-                        </div>
-                        <input
-                            type="search"
-                            id="default-search"
-                            className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-transparent focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Search Categorize..."
-                            required
-                        />
-                        
-                        {/* <button
-                            type="submit"
-                            className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover-bg-blue-700 dark:focus-ring-blue-800"
+                <div className="flex justify-between">
+                    {/* seacrh bar */}
+                    <form className="mt-4 w-1/3 xl:mt-6">
+                        <label
+                            htmlFor="default-search"
+                            className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
                         >
                             Search
-                        </button> */}
+                        </label>
+                        <div className="relative">
+                            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg
+                                    className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                                    />
+                                </svg>
+                            </div>
+                            <input
+                                type="search"
+                                id="default-search"
+                                className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-transparent focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Search Categorize..."
+                                required
+                            />
+                        </div>
+                    </form>
+
+                    {/* Bagian tabs */}
+
+                    <div className="mt-4 xl:mt-6">
+                        <div className="hidden sm:block">
+                            <ul
+                                className="flex gap-6 cursor-pointer"
+                                aria-label="Tabs"
+                            >
+                                <li className="p-2">
+                                    <Link
+                                        className={
+                                            activeTab === "new"
+                                                ? " text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                                                : " text-sm font-medium text-black"
+                                        }
+                                        onClick={() =>
+                                            handleSelectChange("new")
+                                        }
+                                        href="/problems/new"
+                                    >
+                                        New
+                                    </Link>
+                                </li>
+                                <li className="p-2">
+                                    <Link
+                                        className={
+                                            activeTab === "popular"
+                                                ? " text-sm font-medium text-black"
+                                                : "shrink-0 text-sm font-medium text-gray-500  hover:text-black"
+                                        }
+                                        onClick={() => {
+                                            // e.preventDefault()
+                                            handleSelectChange("popular")
+                                            // Inertia.visit("/problems/popular", { method: 'get' })
+                                        }}
+                                        href="/problems/popular"
+                                    >
+                                        Popular
+                                    </Link>
+                                </li>
+                                <li className="p-2">
+                                    <Link
+                                        className={
+                                            activeTab === "name"
+                                                ? " text-sm font-medium "
+                                                : "shrink-0 text-sm font-medium text-black  hover:bg-gray-50 hover:text-gray-700"
+                                        }
+                                        onClick={() =>
+                                            handleSelectChange("name")
+                                        }
+                                        href="/problems/name"
+                                    >
+                                        Name
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </form>
+
+
+
+                </div>
             </div>
         </section>
     );
