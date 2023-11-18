@@ -1,3 +1,5 @@
+// Halaman ni keknya tempat kita render semua, jadi taruk aja navbar disini
+
 import './bootstrap';
 import '../css/app.css';
 
