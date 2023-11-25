@@ -1,5 +1,6 @@
+
 import { iconsImgs } from "@/Utils/Image";
-// import { personsImgs } from "@/Utils/Image";
+// import { personsImgs } from "../utils/Image";
 
 export const navigationLinks = [
     { id: 1, title: "Home", image: iconsImgs.home, link: "/Home" },
@@ -13,7 +14,10 @@ export const navigationLinks = [
     { id: 9, title: "Account", image: iconsImgs.user },
     { id: 10, title: "Settings", image: iconsImgs.gears },
 ];
-
+export const problemLinks = [
+    { id: 1, title: 'Statement', link: '/problemdetail' },
+    { id: 2, title: 'Submission', link: '/problemsubmission' },
+];
 export const problemCard = [
     {
         title: "Return the Sum of Two Numbers",

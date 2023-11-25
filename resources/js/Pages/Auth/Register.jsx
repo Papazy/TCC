@@ -29,7 +29,9 @@ export default function Register() {
     };
 
     return (
-        <GuestLayout>
+        <GuestLayout
+            stats  = 'reg'
+        >
             <Head title="Register" />
 
             <form onSubmit={submit} className='w-3/4'>

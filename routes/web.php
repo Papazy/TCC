@@ -30,6 +30,7 @@ Route::get('/welcome', function () {
 Route::get('/user', [ProfileController::class, 'profile'])->name('profile');
 
 Route::get('/ranking', [RankingsController::class, 'rankings'])->name('rankings');
+
 // Home
 Route::get('/', function () {
     return Inertia::render('Home');
@@ -133,6 +134,14 @@ Route::get('/contest/problem/detail', function () {
     return Inertia::render('Contest/ContestProblemDetail');
 })->name('ContestProblemDetail');
 
+
+Route::get('/problemdetail', function () {
+    return Inertia::render('Detail/ProblemDetail');
+})->name('ProblemDetail');
+
+Route::get('/problemsubmission', function () {
+    return Inertia::render('Detail/ProblemSubmission');
+})->name('ProblemSubmission');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

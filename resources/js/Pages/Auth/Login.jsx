@@ -13,6 +13,7 @@ import { Head, Link, useForm } from '@inertiajs/react';
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: '',
+        test: 'jinx',
         password: '',
         remember: false,
     });
@@ -30,7 +31,9 @@ export default function Login({ status, canResetPassword }) {
     };
 
     return (
-        <GuestLayout>
+        <GuestLayout
+            stats = 'log'
+        >
             <Head title="Log in" />
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
@@ -38,7 +41,7 @@ export default function Login({ status, canResetPassword }) {
             <form onSubmit={submit} className='w-3/4'>
 
                 <div>
-                    <p className='text-4xl font-bold w-full my-4'>Log In</p>
+                    <p className='text-4xl font-bold w-full my-4'>Log in</p>
                 </div>
 
                 <div>
