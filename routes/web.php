@@ -129,6 +129,10 @@ Route::get('/contest', function () {
     return Inertia::render('Contest'); //ini nama halaman yang mau di render
 })->name('contests');
 
+Route::get('/contest/problem/detail', function () {
+    return Inertia::render('Contest/ContestProblemDetail');
+})->name('ContestProblemDetail');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
