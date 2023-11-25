@@ -1,4 +1,5 @@
-export default function ProblemCard() {
+
+export default function ProblemCard({index, title, editorial, attempt, description, tags }) {
     return (
         <section>
             <div className="container px-6 py-10 mx-auto flex flex-wrap justify-between">
@@ -134,7 +135,13 @@ export default function ProblemCard() {
                         </svg>
                     </a>
                 </div>
+              ))}
             </div>
-        </section>
+          </div>
+        </article>
+  
+        
+      </>
     );
-}
+  }
+  

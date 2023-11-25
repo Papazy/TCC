@@ -43,9 +43,97 @@ Route::get('/dashboard', function () {
 
 
 // Problem
-Route::get('/problem', function () {
+Route::get('/problems', function () {
     return Inertia::render('Problem');
-})->name('problem');
+})->name('problems');
+
+// Problem Tab
+    Route::get('/problems/{tag}', function ($tag) {
+        $dataa = array(
+            (object)[
+            'title' => 'JavaScript Frameworks Comparison',
+            'editorial' => true,
+            'attempt' => false,
+            'description' => 'Compare popular JavaScript frameworks for web development.',
+            'tags' => ['javascript', 'web-development'],
+            ],
+            (object)[
+            'title' => 'JavaScript2 Frameworks Comparison',
+            'editorial' => true,
+            'attempt' => false,
+            'description' => 'Compare2 popular JavaScript frameworks for web development.',
+            'tags' => ['javascript', 'web-development'],
+        ]
+    );
+
+    if($tag == "new"){
+        $dataa = array(
+            (object)[
+            'title' => 'JavaScript Frameworks Comparison',
+            'editorial' => true,
+            'attempt' => false,
+            'description' => 'Compare popular JavaScript frameworks for web development.',
+            'tags' => ['javascript', 'web-development'],
+            ],
+            (object)[
+            'title' => 'JavaScript2 Frameworks Comparison',
+            'editorial' => true,
+            'attempt' => false,
+            'description' => 'Compare2 popular JavaScript frameworks for web development.',
+            'tags' => ['javascript', 'web-development'],
+        ]
+    );
+    }else if($tag == "popular"){
+        $dataa = array(
+            (object)[
+            'title' => 'JavaScript popular Frameworks Comparison',
+            'editorial' => true,
+            'attempt' => false,
+            'description' => 'Compare puewapopular JavaScript frameworks for web development.',
+            'tags' => ['javascript', 'web-development'],
+            ],
+            (object)[
+            'title' => 'JavaScript2 popular Frameworks Comparison',
+            'editorial' => true,
+            'attempt' => false,
+            'description' => 'Compare popular JavaScript frameworks for web development.',
+            'tags' => ['javascript', 'web-development'],
+        ]
+    );
+    }else{
+        $dataa = array(
+            (object)[
+            'title' => 'JavaScript yang terkahidsa Frameworks Comparison',
+            'editorial' => true,
+            'attempt' => false,
+            'description' => 'Compare popular JavaScript frameworks for web development.',
+            'tags' => ['javascript', 'web-development'],
+            ],
+            (object)[
+            'title' => 'JavaScript2 Fdsafdsaframeworks Comparison',
+            'editorial' => true,
+            'attempt' => false,
+            'description' => 'Compare2 popular JavaScript frameworks for web development.',
+            'tags' => ['javascript', 'web-development'],
+        ]
+    );
+    }
+       
+        // dd(collect($dataa));
+        return Inertia::render('Problem', [
+            'problemCard' => $dataa
+        ]);
+    })->name('problem');
+
+// Contest
+Route::get('/contest', function () {
+    return Inertia::render('Contest'); //ini nama halaman yang mau di render
+})->name('contests');
+
+Route::get('/contest/problem/detail', function () {
+    return Inertia::render('Contest/ContestProblemDetail');
+})->name('ContestProblemDetail');
+
 
 Route::get('/problemdetail', function () {
     return Inertia::render('Detail/ProblemDetail');
